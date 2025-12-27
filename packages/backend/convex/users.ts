@@ -21,6 +21,8 @@ export const add = mutation ({
             throw new Error("Organization ID is required to add a user");
         }
 
+        throw new Error("Testing an error");
+
         const userId = await ctx.db.insert("users", {
             name: "Indra"
         });
