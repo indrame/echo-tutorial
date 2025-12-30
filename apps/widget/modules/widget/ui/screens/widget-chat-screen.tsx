@@ -21,7 +21,6 @@ import { useAction, useQuery } from "convex/react";
 import {
   AIConversation,
   AIConversationContent,
-  AIConversationScrollButton,
 } from "@workspace/ui/components/ai/conversation";
 import {
   AIInput,
