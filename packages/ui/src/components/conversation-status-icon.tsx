@@ -1,5 +1,6 @@
 import { ArrowRightIcon, ArrowUpIcon, CheckIcon } from "lucide-react";
 import { cn } from "@workspace/ui/lib/utils";
+import { Arrow } from "@radix-ui/react-select";
 
 interface ConversationStatusIconProps {
   status: "unresolved" | "escalated" | "resolved";
@@ -11,11 +12,11 @@ const statusConfig = {
     bgColor: "bg-[#3FB62F]",
   },
   unresolved: {
-    icon: CheckIcon,
+    icon: ArrowRightIcon,
     bgColor: "bg-destructive",
   },
   escalated: {
-    icon: CheckIcon,
+    icon: ArrowUpIcon,
     bgColor: "bg-yellow-500",
   },
 } as const;

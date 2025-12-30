@@ -8,7 +8,7 @@ import { Button } from "@workspace/ui/components/button";
 import { WidgetHeader } from "../components/widget-header";
 import { ArrowLeftIcon, MenuIcon } from "lucide-react";
 import { useInfiniteScroll } from "@workspace/ui/hooks/use-infinite-scroll";
-import { InfiniteScrollTrigger } from "../components/infinite-scroll-trigger";
+import { InfiniteScrollTrigger } from "@workspace/ui/components/infinite-scroll-trigger";
 import { useAtomValue, useSetAtom } from "jotai";
 import {
   contactSessionIdAtomFamily,

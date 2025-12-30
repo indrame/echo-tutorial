@@ -35,7 +35,7 @@ export const DicebearAvatar = ({
     return avatar.toDataUri();
   }, [seed, size, imageUrl]);
 
-  const badgeSize = Math.round(size / 0.5);
+  const badgeSize = Math.round(size / 2);
 
   return (
     <div
