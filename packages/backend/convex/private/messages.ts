@@ -90,6 +90,12 @@ export const create = mutation({
                 message: "Conversation does not belong to the user's organization"
             });
         }
+
+        if(conversation.status === "unresolved") {
+            await ctx.db.patch(args.conversationId, {
+                status: "escalated"
+            })
+        }
         
         await saveMessage(ctx, components.agent, {
             threadId: conversation.threadId,
