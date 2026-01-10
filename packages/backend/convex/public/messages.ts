@@ -7,6 +7,7 @@ import { escalateConversation } from "../system/ai/tools/escalateConversation";
 import { resolveConversation } from "../system/ai/tools/resolveConversation";
 import { es } from "zod/v4/locales";
 import { saveMessage } from "@convex-dev/agent";
+import { search } from "../system/ai/tools/search";
 
 export const create = action({
     args: {
@@ -66,6 +67,7 @@ export const create = action({
                     tools: {
                         resolveConversation,
                         escalateConversation,
+                        search
                     }
                 }
             )
