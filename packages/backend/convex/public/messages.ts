@@ -5,7 +5,6 @@ import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
 import { escalateConversation } from "../system/ai/tools/escalateConversation";
 import { resolveConversation } from "../system/ai/tools/resolveConversation";
-import { es } from "zod/v4/locales";
 import { saveMessage } from "@convex-dev/agent";
 import { search } from "../system/ai/tools/search";
 
@@ -56,7 +55,18 @@ export const create = action({
             
         // });
 
-        const shouldTriggerAgent = conversation.status === "unresolved";
+        await ctx.runMutation(internal.system.contactSessions.refresh, {
+            contactSessionId: args.contactSessionId,
+        });
+
+        const subscription = await ctx.runQuery(
+            internal.system.subscriptions.getByOrganizationId,
+            {
+                organizationId: conversation.organizationId,
+            }
+        );
+
+        const shouldTriggerAgent = conversation.status === "unresolved" && subscription?.status === "active";
 
         if(shouldTriggerAgent) {
             await supportAgent.generateText(

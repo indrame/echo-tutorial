@@ -1,7 +1,7 @@
 import { mutation, query } from "../_generated/server";
 import { ConvexError, v } from "convex/values";
 import { supportAgent } from "../system/ai/agents//supportAgent";
-import { components } from "../_generated/api";
+import { components, internal } from "../_generated/api";
 import { MessageDoc, saveMessage } from "@convex-dev/agent";
 import { paginationOptsValidator } from "convex/server";
 
@@ -115,6 +115,10 @@ export const create = mutation({
                 message: "Invalid or expired contact session"
             });
         }
+
+        await ctx.runMutation(internal.system.contactSessions.refresh, {
+            contactSessionId: args.contactSessionId,
+        });
  
         const widgetSettings = await ctx.db
             .query("widgetSettings")
