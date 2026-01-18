@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "dev": "vite --port 3002",
-        "build": "vite build"
+        "build": "vite build && node copy-files.js"
     },
     "devDependencies": {
         "@types/node": "^20",

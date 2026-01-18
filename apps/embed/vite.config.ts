@@ -3,6 +3,7 @@ import { resolve } from "path";
 
 export default defineConfig({
     build: {
+        outDir: "dist",
         lib: {
             entry: resolve(__dirname, "embed.ts"),
             name: "EchoWidget",
@@ -13,8 +14,10 @@ export default defineConfig({
             output: {
                 extend: true
             }
-        }
+        },
+        copyPublicDir: false
     },
+    publicDir: false,
     server: {
         port: 3002,
         open: "/demo.html"
