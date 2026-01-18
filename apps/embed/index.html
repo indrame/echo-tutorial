@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Embed Echo Widget - Test Page</title>
+        <style>
+            body {
+                font-family: system-ui, -apple-system, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 2rem;
+                line-height: 1.6;
+            }
+            h1 {
+                color: #333;
+            }
+            .info-box {
+                background: #f0f9ff;
+                border-left: 4px solid #3b82f6;
+                padding: 1rem;
+                margin: 2rem 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Echo Widget Test Page</h1>
+        <p>This page is for testing the Echo chat widget integration.</p>
+        
+        <div class="info-box">
+            <strong>👉 Look for the chat bubble in the bottom-right corner</strong>
+            <p>Click the bubble to open the chat widget and test the AI customer support functionality.</p>
+        </div>
+
+        <h2>Test Instructions</h2>
+        <ul>
+            <li>The chat widget should appear as a floating button in the bottom-right corner</li>
+            <li>Click the button to open the chat interface</li>
+            <li>Try sending messages to test the AI responses</li>
+            <li>Test voice integration if VAPI is configured</li>
+            <li>Check widget customization and branding</li>
+        </ul>
+
+        <h2>About This Integration</h2>
+        <p>
+            The widget is loaded via a simple script tag and requires only an organization ID. 
+            It automatically handles session management, real-time messaging, and AI-powered responses.
+        </p>
+
+       <script src="https://echo-tutorial-widget-sand.vercel.app/widget.js" data-organization-id="org_37hapIn8ulFAT8GZdIueFSmeVBi"></script>
+    </body>
+</html>
